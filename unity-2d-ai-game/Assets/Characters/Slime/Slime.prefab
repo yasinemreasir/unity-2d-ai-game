@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8039575667982157296}
   - component: {fileID: 2738581329460663156}
   - component: {fileID: 5219382447783733511}
+  - component: {fileID: 1263314445096743710}
   - component: {fileID: 1742134553362203655}
   m_Layer: 0
   m_Name: Slime
@@ -155,9 +156,31 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.18, y: 0.14}
+  m_Offset: {x: -0.00037132204, y: -0.006683618}
+  m_Size: {x: 0.16886058, y: 0.16886058}
   m_Direction: 0
+--- !u!95 &1263314445096743710
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5716992899077124872}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1742134553362203655
 MonoBehaviour:
   m_ObjectHideFlags: 0

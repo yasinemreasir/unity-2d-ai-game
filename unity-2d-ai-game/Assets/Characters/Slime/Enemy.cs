@@ -1,7 +1,11 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Enemy : MonoBehaviour
 {
+
+    Animator animator;
 
     public float Health
     {
@@ -23,14 +27,18 @@ public class Enemy : MonoBehaviour
    
     public void Defeated()
     {
+        animator.SetTrigger("defeated");
+    }
+    public void RemoveEnemy()
+    {
         Destroy(gameObject);
+    }
 
-
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
-        {
-
-        }
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
         // Update is called once per frame
         void Update()
@@ -38,4 +46,4 @@ public class Enemy : MonoBehaviour
 
         }
     }
-}
+
