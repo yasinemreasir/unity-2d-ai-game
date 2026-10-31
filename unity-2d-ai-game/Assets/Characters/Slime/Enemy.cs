@@ -7,14 +7,22 @@ public class Enemy : MonoBehaviour
 
     Animator animator;
 
+    bool isAlive = true;
+
+
     public float Health
     {
         set
         {
+         
+            if (value < health)
+            {
+                animator.SetTrigger("hit");
+            }
             health = value;
             if (health <= 0)
             {
-                Defeated();
+                animator.SetBool("isAlive", false);
             }
         }
         get
@@ -23,8 +31,20 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public float health = 1;
-   
+    public float health = 3;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+        animator.SetBool("isAlive", isAlive);
+    }
+
+    void OnHit(float damage)
+    {
+        Health -= damage;
+    }
+
     public void Defeated()
     {
         animator.SetTrigger("defeated");
@@ -34,11 +54,7 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
+
 
         // Update is called once per frame
         void Update()
