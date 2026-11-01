@@ -136,7 +136,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1553947698317083156}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e036ba8cfe400224b8ab40041bd0399b, type: 3}
+  m_Script: {fileID: 11500000, guid: 99082a35641cd7e469263645261157e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
   moveSpeed: 1
@@ -150,12 +150,16 @@ MonoBehaviour:
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 1
+      m_Bits: 0
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
   swordAttack: {fileID: 2147496476385943732}
+  maxHealth: 100
+  healthBar: {fileID: 0}
+  invincibleTime: 0.5
+  hitColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!50 &3133278017893268219
 Rigidbody2D:
   serializedVersion: 5
@@ -344,3 +348,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   damage: 3
   swordCollider: {fileID: 5508366216856566303}
+  debugLog: 0
