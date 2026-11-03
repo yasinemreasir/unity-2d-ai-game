@@ -591,7 +591,7 @@ GameObject:
   - component: {fileID: 373367829}
   - component: {fileID: 373367831}
   - component: {fileID: 373367830}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: obsatale (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -607,8 +607,8 @@ Transform:
   m_GameObject: {fileID: 373367828}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.76, y: -1.94, z: 0}
-  m_LocalScale: {x: 19.642399, y: 0.061894797, z: 1}
+  m_LocalPosition: {x: 6.8011, y: -3.7746, z: 0}
+  m_LocalScale: {x: 26.430862, y: -3.607427, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1275391821}
@@ -699,7 +699,7 @@ GameObject:
   - component: {fileID: 433894266}
   - component: {fileID: 433894267}
   - component: {fileID: 433894268}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: obsatale
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -715,8 +715,8 @@ Transform:
   m_GameObject: {fileID: 433894265}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.7679, y: -0.9761, z: 0}
-  m_LocalScale: {x: 0.01667056, y: 1.1034045, z: 1}
+  m_LocalPosition: {x: 3.7698, y: -0.8373, z: 0}
+  m_LocalScale: {x: -0.008330986, y: 1.3811116, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1275391821}
@@ -1146,8 +1146,8 @@ Transform:
   m_GameObject: {fileID: 538381900}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.134, y: -0.638, z: 0}
-  m_LocalScale: {x: 0.21722807, y: 0.16829315, z: 1}
+  m_LocalPosition: {x: 4.151, y: -0.638, z: 0}
+  m_LocalScale: {x: 0.16324426, y: 0.1771397, z: 0.98586}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1255,7 +1255,7 @@ GameObject:
   - component: {fileID: 723655944}
   - component: {fileID: 723655943}
   - component: {fileID: 723655945}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: FenceGate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1270,7 +1270,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723655942}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1330,8 +1330,8 @@ Transform:
   m_GameObject: {fileID: 723655942}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.289, y: 0.507, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 3.764, y: 0.08, z: 0}
+  m_LocalScale: {x: 0.29695514, y: 0.45747918, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -45518,6 +45518,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 21, y: -5, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 33
+      m_TileSpriteIndex: 33
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 23, y: -5, z: 0}
     second:
       serializedVersion: 2
@@ -46003,6 +46013,16 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 9
       m_TileSpriteIndex: 9
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 26, y: -4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 34
+      m_TileSpriteIndex: 34
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -104136,6 +104156,10 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 7434bef57fc45a04bbb02a91964d8483, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: aef6b0a82152ccd41ac39ad4159f6f96, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: a0ddbe431f6393048953d3ca0d130de0, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 26fd44bbd44704c4bb3e3f93c35dbadf, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 122
     m_Data: {fileID: -530733849, guid: 55926e9ab5e76294fa8f30b5b6399669, type: 3}
@@ -104203,8 +104227,12 @@ Tilemap:
     m_Data: {fileID: -234472499, guid: 8bc45d5188f89a5428022fcc8e288218, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -1409988931, guid: 8bc45d5188f89a5428022fcc8e288218, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 1753205982242350755, guid: 55926e9ab5e76294fa8f30b5b6399669, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -1899378009, guid: 55926e9ab5e76294fa8f30b5b6399669, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 10235
+  - m_RefCount: 10237
     m_Data:
       e00: 1
       e01: 0
@@ -104223,7 +104251,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 10235
+  - m_RefCount: 10237
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -104543,7 +104571,7 @@ GameObject:
   - component: {fileID: 1040733432}
   - component: {fileID: 1040733434}
   - component: {fileID: 1040733433}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: obsatale (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104559,8 +104587,8 @@ Transform:
   m_GameObject: {fileID: 1040733431}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.7667, y: 2.1647, z: 0}
-  m_LocalScale: {x: 19.642399, y: 0.061894797, z: 1}
+  m_LocalPosition: {x: 8.4671, y: 4.3632, z: 0}
+  m_LocalScale: {x: 23.042498, y: 4.458969, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1275391821}
@@ -187469,7 +187497,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700155780}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -187728,7 +187756,7 @@ GameObject:
   - component: {fileID: 1804617729}
   - component: {fileID: 1804617731}
   - component: {fileID: 1804617730}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: NavMash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187808,7 +187836,7 @@ GameObject:
   - component: {fileID: 1875120855}
   - component: {fileID: 1875120857}
   - component: {fileID: 1875120856}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: obsatale (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187824,8 +187852,8 @@ Transform:
   m_GameObject: {fileID: 1875120854}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.8494, y: 0.1183, z: 0}
-  m_LocalScale: {x: 0.029120164, y: 4.057301, z: 1}
+  m_LocalPosition: {x: -4.6471, y: 2.308, z: 0}
+  m_LocalScale: {x: 3.6244717, y: 8.540632, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1275391821}
@@ -187916,7 +187944,7 @@ GameObject:
   - component: {fileID: 2083788883}
   - component: {fileID: 2083788885}
   - component: {fileID: 2083788884}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: obsatale (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187932,8 +187960,8 @@ Transform:
   m_GameObject: {fileID: 2083788882}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.7837, y: 1.196, z: 0}
-  m_LocalScale: {x: 0.011184279, y: 1.2076436, z: 1}
+  m_LocalPosition: {x: 3.7771, y: 1.0688, z: 0}
+  m_LocalScale: {x: -0.016511606, y: 1.4621676, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1275391821}
