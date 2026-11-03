@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDamageable
 {
     public float moveSpeed = 1f;
 
@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Can")]
     public float maxHealth = 100f;
-    public HealthBar healthBar;           
+    public HealthBar healthBar;
     public float invincibleTime = 0.5f;   // Hasar aldıktan sonra kaç sn dokunulmaz
     public Color hitColor = Color.red;    // Hasar alınca kısa süre bu renge boyanır
 
@@ -34,9 +34,14 @@ public class PlayerController : MonoBehaviour
 
     bool canMove = true;
     bool isAlive = true;
+    bool inputLocked;
     float health;
     float invincibleUntil;
 
+    // Oyuncu öldüğünde bir kez tetiklenir (Game Over ekranı bunu dinleyecek).
+    public event System.Action Died;
+
+    // IDamageable
     public bool IsAlive
     {
         get { return isAlive; }
@@ -128,12 +133,13 @@ public class PlayerController : MonoBehaviour
 
     void OnMove(InputValue movementValue)
     {
-        movementInput = movementValue.Get<Vector2>();
+        // Diyalog açıkken (inputLocked) WASD ile yazı yazarken karakter yürümesin
+        movementInput = inputLocked ? Vector2.zero : movementValue.Get<Vector2>();
     }
 
     void OnFire()
     {
-        if (!isAlive) return;
+        if (!isAlive || inputLocked) return;
         animator.SetTrigger("swordAttack");
     }
 
@@ -172,7 +178,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Slime (veya başka bir düşman) tarafından çağrılır
+    // Diyalog paneli gibi arayüzler açılırken oyuncu girdisini (hareket + saldırı) kapatır/açar.
+    public void SetInputLocked(bool locked)
+    {
+        inputLocked = locked;
+
+        if (locked)
+        {
+            movementInput = Vector2.zero;
+            SetBool("isMoving", false);
+        }
+    }
+
+    // IDamageable - Slime (veya başka bir düşman) tarafından çağrılır
     public void TakeDamage(float damage)
     {
         if (!isAlive || Time.time < invincibleUntil) return;
@@ -216,6 +234,11 @@ public class PlayerController : MonoBehaviour
         SetBool("isAlive", false); // Animator bu parametreyle player_death animasyonuna geçer
 
         Debug.Log("Oyuncu öldü!");
+
+        if (Died != null)
+        {
+            Died();
+        }
     }
 
     IEnumerator HitFlash()

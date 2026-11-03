@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamageable
 {
     [Header("Can")]
     public float health = 3;
@@ -34,6 +34,21 @@ public class Enemy : MonoBehaviour
     float nextAttackTime;
     float stunUntil;
 
+    // Düşman öldüğünde bir kez tetiklenir (örn. boss ölünce oyunu bitirmek için dinlenir).
+    public event System.Action<Enemy> Died;
+
+    // IDamageable
+    public bool IsAlive
+    {
+        get { return isAlive; }
+    }
+
+    // IDamageable
+    public void TakeDamage(float amount)
+    {
+        Health -= amount;
+    }
+
     public float Health
     {
         set
@@ -53,6 +68,11 @@ public class Enemy : MonoBehaviour
                 isAlive = false;
                 SetBool("isMoving", false);
                 SetBool("isAlive", false);
+
+                if (Died != null)
+                {
+                    Died(this);
+                }
             }
         }
         get

@@ -6,6 +6,13 @@ public class SwordAttack : MonoBehaviour
     public Collider2D swordCollider;
 
     Vector2 rightattackOffset;
+    IDamageable owner;
+
+    void Awake()
+    {
+        // Kılıcın sahibi (Player). Kendi kendimize hasar vermemek için tutuyoruz.
+        owner = GetComponentInParent<IDamageable>();
+    }
 
     void Start()
     {
@@ -16,14 +23,12 @@ public class SwordAttack : MonoBehaviour
     {
         swordCollider.enabled = true;
         transform.localPosition = rightattackOffset;
-        
     }
 
     public void AttackLeft()
     {
         swordCollider.enabled = true;
         transform.localPosition = new Vector3(rightattackOffset.x * -1, rightattackOffset.y);
-        
     }
 
     public void StopAttack()
@@ -33,16 +38,14 @@ public class SwordAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Tag'e bakmadan, çarpılan objede ya da üst objelerinde Enemy scripti arıyoruz.
-        Enemy enemy = other.GetComponentInParent<Enemy>();
+        // Somut Enemy sınıfına değil, hasar alabilen her şeye (IDamageable) vuruyoruz.
+        IDamageable target = other.GetComponentInParent<IDamageable>();
 
-        if (enemy == null)
+        if (target == null || ReferenceEquals(target, owner) || !target.IsAlive)
         {
             return;
         }
 
-        enemy.Health -= damage;
-        
+        target.TakeDamage(damage);
     }
-
 }
