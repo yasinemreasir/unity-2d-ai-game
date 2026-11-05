@@ -94,6 +94,14 @@ public class NpcBrain : MonoBehaviour
         }
     }
 
+    // Konuşma geçmişini ve "tetiklenmiş eylemler" kaydını sıfırlar (diyalog test modu her denemede kullanır).
+    public void ResetConversation()
+    {
+        CancelPending();
+        history.Clear();
+        consumedActions.Clear();
+    }
+
     // Oyuncunun yazdığı mesajı modele gönderir. Sonuç olaylarla bildirilir. Bu metot exception fırlatmaz.
     public async Task SendPlayerMessageAsync(string playerText)
     {

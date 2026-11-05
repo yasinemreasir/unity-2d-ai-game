@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 // Plaka tarafından açılan çit. Belirlenen objeleri (çit parçaları, görünmez engel collider'ı vb.) kapatır.
-public class FenceGate : MonoBehaviour, IActivatable
+public class FenceGate : MonoBehaviour, IActivatable, IResettable
 {
     [Tooltip("Açılınca SetActive(false) yapılacak objeler. Boşsa bu objenin kendisi kapatılır.")]
     [SerializeField] GameObject[] objectsToDisable;
@@ -37,6 +37,26 @@ public class FenceGate : MonoBehaviour, IActivatable
             if (go != null)
             {
                 go.SetActive(false);
+            }
+        }
+    }
+
+    // Test modu her denemeden önce çiti/kapıyı tekrar kapatır.
+    public void ResetState()
+    {
+        opened = false;
+
+        if (objectsToDisable == null || objectsToDisable.Length == 0)
+        {
+            gameObject.SetActive(true);
+            return;
+        }
+
+        foreach (GameObject go in objectsToDisable)
+        {
+            if (go != null)
+            {
+                go.SetActive(true);
             }
         }
     }

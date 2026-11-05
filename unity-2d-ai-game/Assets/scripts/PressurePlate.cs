@@ -1,7 +1,7 @@
 using UnityEngine;
 
 // Companion'ın gidip bastığı basınç plakası. Basılınca bağlı IActivatable'ları (örn. FenceGate) açar.
-public class PressurePlate : MonoBehaviour, IInteractable
+public class PressurePlate : MonoBehaviour, IInteractable, IResettable
 {
     [Tooltip("Plaka basılınca açılacak objeler (üzerlerinde FenceGate gibi IActivatable bileşeni olmalı).")]
     [SerializeField] GameObject[] targets;
@@ -14,6 +14,7 @@ public class PressurePlate : MonoBehaviour, IInteractable
     [SerializeField] Sprite pressedSprite;
 
     bool pressed;
+    Sprite originalSprite;
 
     public bool CanInteract { get { return !pressed; } }
 
@@ -27,6 +28,22 @@ public class PressurePlate : MonoBehaviour, IInteractable
         if (spriteRenderer == null)
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
+        }
+
+        if (spriteRenderer != null)
+        {
+            originalSprite = spriteRenderer.sprite;
+        }
+    }
+
+    // Test modu her denemeden önce plakayı başlangıç haline döndürür.
+    public void ResetState()
+    {
+        pressed = false;
+
+        if (spriteRenderer != null && originalSprite != null)
+        {
+            spriteRenderer.sprite = originalSprite;
         }
     }
 
