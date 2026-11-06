@@ -589,5 +589,9 @@ Ollama arka planda http://127.0.0.1:11434 adresinde çalışır. Oyun bu adresi 
 ![ref1]
 ## 12\. Ekran görüntüleri
 
+<img width="771" height="439" alt="Ekran görüntüsü 2026-11-06 141509" src="https://github.com/user-attachments/assets/d9a0e4e2-97bb-47c0-9f3c-7f091ac69a19" />
+<img width="644" height="416" alt="Ekran görüntüsü 2026-11-06 141533" src="https://github.com/user-attachments/assets/a22a84d9-702b-4c79-a5fe-57e529804ed9" />
+<img width="899" height="528" alt="Ekran görüntüsü 2026-11-06 141603" src="https://github.com/user-attachments/assets/641d932a-8c99-4fb3-8a50-595d6f949ec3" />
+
 
 [ref1]: Aspose.Words.991ee957-8233-4d72-b603-96620f7ee495.001.png
